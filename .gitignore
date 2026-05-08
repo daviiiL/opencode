@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Package manager locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+
+# OpenCode/Sisyphus state files
+.opencode/
+.sisyphus/
+
+# Runtime state files
+opencode-notifier-state.json
+dcp.jsonc
+
+# Backups
+*.backup*
+*.bak
+*.swp
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
