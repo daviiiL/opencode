@@ -1,45 +1,53 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
+	"$schema": "https://opencode.ai/config.json",
+	"autoupdate": true,
   "plugin": [
     "@warp-dot-dev/opencode-warp",
     "@nick-vi/type-inject-mcp",
     "@tarquinen/opencode-dcp@latest",
     "opencode-pty",
     "@franlol/opencode-md-table-formatter@latest",
-    "oh-my-openagent@latest",
-    "@mohak34/opencode-notifier@latest"
+    "@gotgenes/opencode-agent-identity",
+    "opencode-agent-memory",
+    "opencode-agent-skills",
+    "cc-safety-net",
+    "@mohak34/opencode-notifier@latest",
+    "@plannotator/opencode@latest",
+    "@streetturtle/opencode-open-in",
+    "@streetturtle/opencode-context-progress",
+    "@streetturtle/opencode-recap",
+    "@streetturtle/opencode-session-tokens"
   ],
-  "instructions": [
-    "~/.config/opencode/plugin/shell-strategy/shell_strategy.md"
-  ],
-  "provider": {
-    "spark": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "SPARKIE",
-      "options": {
-        "baseURL": "http://100.80.227.55:8000/v1",
-        "chunkTimeout": 18000000,
-        "apiKey": ""
-      },
-      "models": {
-        "Intel/Qwen3.5-122B-A10B-int4-AutoRound": {
-          "name": "Qwen3.5 Thinking",
-          "limit": {
-            "context": 262144,
-            "output": 65536
-          },
-          "modalities": {
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        }
-      }
-    }
-  }
+	"instructions": [
+		"~/.config/opencode/plugin/shell-strategy/shell_strategy.md"
+	],
+	"provider": {
+		"spark": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "SPARKIE",
+			"options": {
+				"baseURL": "http://100.80.227.55:8000/v1",
+				"chunkTimeout": 18000000,
+				"apiKey": ""
+			},
+			"models": {
+				"nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4": {
+					"name": "Nemotron3Super",
+					"limit": {
+						"context": 262144,
+						"output": 65536
+					},
+					"modalities": {
+						"input": [
+							"text",
+							"image"
+						],
+						"output": [
+							"text"
+						]
+					}
+				}
+			}
+		}
+	}
 }

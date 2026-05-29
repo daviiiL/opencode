@@ -32,3 +32,6 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+
+memory/
+opencode.jsonc.tui-migration.bak

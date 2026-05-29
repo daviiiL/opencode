@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "ayu-dark",
+  "plugin": [
+    "@streetturtle/opencode-open-in",
+    "@streetturtle/opencode-context-progress",
+    "@streetturtle/opencode-recap",
+    "@streetturtle/opencode-session-tokens"
+  ]
+}
