@@ -1,26 +1,52 @@
 {
 	"$schema": "https://opencode.ai/config.json",
 	"autoupdate": true,
-  "plugin": [
-    "@warp-dot-dev/opencode-warp",
-    "@nick-vi/type-inject-mcp",
-    "@tarquinen/opencode-dcp@latest",
-    "opencode-pty",
-    "@franlol/opencode-md-table-formatter@latest",
-    "@gotgenes/opencode-agent-identity",
-    "opencode-agent-memory",
-    "opencode-agent-skills",
-    "cc-safety-net",
-    "@mohak34/opencode-notifier@latest",
-    "@plannotator/opencode@latest",
-    "@streetturtle/opencode-open-in",
-    "@streetturtle/opencode-context-progress",
-    "@streetturtle/opencode-recap",
-    "@streetturtle/opencode-session-tokens"
-  ],
+	"plugin": [
+		"@warp-dot-dev/opencode-warp",
+		"@nick-vi/type-inject-mcp",
+		"@tarquinen/opencode-dcp@latest",
+		"opencode-pty",
+		"@franlol/opencode-md-table-formatter@latest",
+		"@gotgenes/opencode-agent-identity",
+		"opencode-agent-memory",
+		"opencode-agent-skills",
+		"cc-safety-net",
+		"@mohak34/opencode-notifier@latest",
+		"@plannotator/opencode@latest",
+		"@streetturtle/opencode-context-progress",
+		"@streetturtle/opencode-session-tokens",
+		"oh-my-opencode-slim"
+	],
 	"instructions": [
 		"~/.config/opencode/plugin/shell-strategy/shell_strategy.md"
 	],
+	"mcp": {
+		"context7": {
+			"type": "remote",
+			"url": "https://mcp.context7.com/mcp"
+		},
+		"coderag": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"@sylphx/coderag-mcp"
+			],
+			"environment": {
+				"OPENAI_API_KEY": "",
+				"CODEBASE_ROOT": "",
+				"INDEX_PATH": ".coderag"
+			}
+		},
+		"pdf-reader": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"@sylphx/pdf-reader-mcp"
+			]
+		}
+	},
 	"provider": {
 		"spark": {
 			"npm": "@ai-sdk/openai-compatible",
@@ -31,8 +57,8 @@
 				"apiKey": ""
 			},
 			"models": {
-				"nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4": {
-					"name": "Nemotron3Super",
+				"nvidia/MiniMax-M2.7-NVFP4": {
+					"name": "MiniMax M2.7",
 					"limit": {
 						"context": 262144,
 						"output": 65536
@@ -49,5 +75,26 @@
 				}
 			}
 		}
-	}
+	},
+	"agent": {
+		"explore": {
+			"disable": true
+		},
+		"general": {
+			"disable": true
+		},
+  "orchestrator": {
+    "permission": {
+      "edit": "deny",
+      "bash": "ask"
+    }
+  },
+  "build": {
+    "disable": true
+  },
+  "plan": {
+    "disable": true
+  }
+	},
+	"lsp": true
 }

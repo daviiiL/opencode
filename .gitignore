@@ -15,6 +15,9 @@ bun.lock
 opencode-notifier-state.json
 dcp.jsonc
 
+# Local upstream/source checkouts
+oh-my-opencode-slim/
+
 # Backups
 *.backup*
 *.bak
@@ -34,4 +37,9 @@ temp/
 *.tmp
 
 memory/
+journal/
 opencode.jsonc.tui-migration.bak
+
+# BEGIN oh-my-opencode-slim clonedeps
+.slim/clonedeps/repos/
+# END oh-my-opencode-slim clonedeps
