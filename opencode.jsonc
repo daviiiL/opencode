@@ -45,6 +45,10 @@
 				"-y",
 				"@sylphx/pdf-reader-mcp"
 			]
+		},
+		"vue-mcp": {
+			"type": "remote",
+			"url": "https://mcp.vue-mcp.org/mcp"
 		}
 	},
 	"provider": {
@@ -57,16 +61,15 @@
 				"apiKey": ""
 			},
 			"models": {
-				"nvidia/MiniMax-M2.7-NVFP4": {
-					"name": "MiniMax M2.7",
+				"Qwen/Qwen3-Coder-Next-FP8": {
+					"name": "Qwen3 Coder Next FP8",
 					"limit": {
-						"context": 262144,
-						"output": 65536
+						"context": 131072,
+						"output": 32768
 					},
 					"modalities": {
 						"input": [
-							"text",
-							"image"
+							"text"
 						],
 						"output": [
 							"text"
