@@ -3,7 +3,8 @@
   "theme": "ayu-dark",
   "plugin": [
     "@streetturtle/opencode-context-progress",
-    "@streetturtle/opencode-session-tokens"
+    "@streetturtle/opencode-session-tokens",
+    "oh-my-opencode-slim"
   ],
   "keybinds": {
     "session_child_first": "<leader>j",
