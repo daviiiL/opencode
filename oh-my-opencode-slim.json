@@ -1,0 +1,54 @@
+{
+    "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+    "preset": "sparkie-mix",
+    "presets": {
+        "sparkie-mix": {
+            "orchestrator": {
+                "model": "openai/gpt-5.5",
+                "skills": [
+                    "*"
+                ],
+                "mcps": [
+                    "*",
+                    "!context7"
+                ]
+            },
+            "oracle": {
+                "displayName": "Debugger",
+                "model": "openai/gpt-5.5",
+                "skills": [
+                    "simplify"
+                ],
+                "mcps": []
+            },
+            "librarian": {
+                "displayName": "researcher",
+                "model": "spark/Qwen/Qwen3-Coder-Next-FP8",
+                "skills": [],
+                "mcps": [
+                    "websearch",
+                    "context7",
+                    "grep_app"
+                ]
+            },
+            "explorer": {
+                "model": "spark/Qwen/Qwen3-Coder-Next-FP8",
+                "skills": [],
+                "mcps": []
+            },
+            "designer": {
+                "model": "spark/Qwen/Qwen3-Coder-Next-FP8",
+                "skills": [
+                    "agent-browser"
+                ],
+                "mcps": []
+            },
+            "fixer": {
+                "displayName": "builder",
+                "model": "spark/Qwen/Qwen3-Coder-Next-FP8",
+                "skills": [],
+                "mcps": []
+            }
+        }
+    }
+}
