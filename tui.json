@@ -1,6 +1,7 @@
 {
   "plugin": [
-    "@slkiser/opencode-quota"
+    "@slkiser/opencode-quota",
+    "@tarquinen/opencode-dcp@latest"
   ],
   "$schema": "https://opencode.ai/tui.json"
 }
