@@ -1,7 +1,6 @@
 {
   "plugin": [
-    "@slkiser/opencode-quota",
-    "oh-my-opencode-slim"
+    "@slkiser/opencode-quota"
   ],
   "$schema": "https://opencode.ai/tui.json"
 }

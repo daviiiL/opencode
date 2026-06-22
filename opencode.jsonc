@@ -1,85 +1,86 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"plugin": [
-		"oh-my-opencode-slim",
-		"@slkiser/opencode-quota",
-    "opencode-agent-skills"
-	],
-	"mcp": {
-		"context7": {
-			"type": "remote",
-			"url": "https://mcp.context7.com/mcp"
-		},
-		"coderag": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"@sylphx/coderag-mcp"
-			],
-			"environment": {
-				"OPENAI_API_KEY": "",
-				"CODEBASE_ROOT": "",
-				"INDEX_PATH": ".coderag"
-			}
-		},
-		"pdf-reader": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"@sylphx/pdf-reader-mcp"
-			]
-		},
-		"angular-cli": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"@angular/cli",
-				"mcp"
-			]
-		},
-		"vue-mcp": {
-			"type": "remote",
-			"url": "https://mcp.vue-mcp.org/mcp"
-		}
-	},
-	"provider": {
-		"spark": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "SPARKIE",
-			"options": {
-				"baseURL": "http://100.80.227.55:8000/v1",
-				"chunkTimeout": 18000000,
-				"apiKey": ""
-			},
-			"models": {
-				"Qwen/Qwen3-Coder-Next-FP8": {
-					"name": "Qwen3 Coder Next FP8",
-					"limit": {
-						"context": 131072,
-						"output": 32768
-					},
-					"modalities": {
-						"input": [
-							"text"
-						],
-						"output": [
-							"text"
-						]
-					}
-				}
-			}
-		}
-	},
-	"agent": {
-		"explore": {
-			"disable": true
-		},
-		"general": {
-			"disable": true
-		}
-	},
-	"lsp": true
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "@slkiser/opencode-quota",
+    "opencode-agent-skills",
+    "oh-my-opencode-slim",
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "coderag": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@sylphx/coderag-mcp"
+      ],
+      "environment": {
+        "OPENAI_API_KEY": "",
+        "CODEBASE_ROOT": "",
+        "INDEX_PATH": ".coderag"
+      }
+    },
+    "pdf-reader": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@sylphx/pdf-reader-mcp"
+      ]
+    },
+    "angular-cli": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@angular/cli",
+        "mcp"
+      ]
+    },
+    "vue-mcp": {
+      "type": "remote",
+      "url": "https://mcp.vue-mcp.org/mcp"
+    }
+  },
+  "provider": {
+    "spark": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "SPARKIE",
+      "options": {
+        "baseURL": "http://100.80.227.55:8000/v1",
+        "chunkTimeout": 18000000,
+        "apiKey": ""
+      },
+      "models": {
+        "Qwen/Qwen3-Coder-Next-FP8": {
+          "name": "Qwen3 Coder Next FP8",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "lsp": true
 }
